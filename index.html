@@ -7,6 +7,55 @@
     <title>Document</title>
 </head>
 <body>
+
+    <header>
+            <h2>Reliable Bank</h2>
+        <div id="navbar">
+            <a href="#">Home</a>
+            <a href="#">About us</a>
+            <a href="#">Contact</a>
+            <a href="#" onclick="openAddMenu()">Add User</a>
+        </div>
+    </header>
+
+    <div id="addUserMenu">
+        <div class="content">
+            <input type="text" id="inputName">
+            <label>Enter Name</label>
+        </div>
+        <div class="content">
+            <input type="phone" id="inputNumber">
+            <label>Enter Phone Number</label>
+        </div>
+        <div class="content">
+            <input type="number" id="inputDebt">
+            <label>Enter Debt</label>
+        </div>
+
+        <button onclick="check()">Add</button>
+        <button onclick="closeAddMenu()">Back</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>№</th>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Debt</th>
+                <th>Post</th>
+            </tr>
+        </thead>
+        <tbody id="res">
+            <tr>
+                <td>1</td>
+                <td>Behruz</td>
+                <td>+998933233</td>
+                <td>20000</td>
+            </tr>
+        </tbody>
+    </table>
+
     <script src="./JS/script.js"></script>
 </body>
 </html>
