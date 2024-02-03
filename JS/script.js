@@ -2,6 +2,7 @@ var res = document.getElementById("res");
 var inputName = document.getElementById("inputName");
 var inputNumber = document.getElementById("inputNumber");
 var inputDebt = document.getElementById("inputDebt");
+var body = document.querySelector("body");
 var users = [
     {
         name: "Behruz",
@@ -18,19 +19,10 @@ var users = [
 ];
 
 function openAddMenu() {
-    document.getElementById("addUserMenu").style.display = "block";
-    document.getElementById("addUserMenu").style.top = "60px";
+    body.classList.toggle("active");
     closeHistory();
 }
 
-function closeAddMenu() {
-    document.getElementById("addUserMenu").style.display = "none";
-    document.getElementById("addUserMenu").style.top = "-90vh";
-
-    inputName.value = "";
-    inputNumber.value = "";
-    inputDebt.value = "";
-}
 
 function check() {
     if (inputName.value.trim() != "" && inputNumber.value.trim() != "" && inputDebt.value.trim() != "") {
@@ -134,7 +126,7 @@ function removeDebt(id) {
 }
 
 function showHistory(id) {
-    closeAddMenu();
+    openAddMenu()
     document.getElementById("history").style.display = "block";
     document.getElementById("showHistory").innerHTML = ""
     users[id].history.forEach(element => {
