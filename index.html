@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/style.css">
-    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Bank system</title>
 </head>
+
 <body>
 
     <header>
-            <h2>Reliable Bank</h2>
+        <h2>Reliable Bank</h2>
         <div id="navbar">
             <a href="#">Home</a>
             <a href="#">About us</a>
-            <a href="#">Contact</a>
             <a href="#" onclick="openAddMenu()">Add User</a>
         </div>
     </header>
@@ -44,18 +46,22 @@
                 <th>Phone Number</th>
                 <th>Debt</th>
                 <th>Post</th>
+                <th>History</th>
             </tr>
         </thead>
-        <tbody id="res">
-            <tr>
-                <td>1</td>
-                <td>Behruz</td>
-                <td>+998933233</td>
-                <td>20000</td>
-            </tr>
-        </tbody>
+        <tbody id="res"></tbody>
     </table>
+
+    <div id="history">
+        <div id="showHistory"></div>
+        <button onclick="closeHistory()">Back</button>
+    </div>
+
+    <div id="showAddDebtMenu"></div>
+
+    <div id="showRemoveDebtMenu"></div>
 
     <script src="./JS/script.js"></script>
 </body>
+
 </html>
