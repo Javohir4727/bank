@@ -93,6 +93,7 @@ function addDebt(id) {
         })
         showUsers(users);
         closeAddDebtMenu();
+        showHistory(id)
     }
 }
 
@@ -122,6 +123,7 @@ function removeDebt(id) {
         })
         showUsers(users);
         closeRemoveDebtMenu();
+        showHistory(id)
     }
 }
 
