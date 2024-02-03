@@ -75,6 +75,7 @@ function showAddDebtMenu(id) {
         <button onclick="addDebt(${id})">Ok</button>
         <button onclick="closeAddDebtMenu()">Back</button>
     `;
+    closeRemoveDebtMenu(id)
 }
 
 function closeAddDebtMenu() {
@@ -93,7 +94,9 @@ function addDebt(id) {
         })
         showUsers(users);
         closeAddDebtMenu();
+        showHistory(id)
     }
+    showRemoveDebtMenu
 }
 
 function showRemoveDebtMenu(id) {
@@ -104,6 +107,7 @@ function showRemoveDebtMenu(id) {
         <button onclick="removeDebt(${id})">Ok</button>
         <button onclick="closeRemoveDebtMenu()">Back</button>
     `
+    closeAddDebtMenu(id)
 }
 
 function closeRemoveDebtMenu() {
@@ -122,6 +126,7 @@ function removeDebt(id) {
         })
         showUsers(users);
         closeRemoveDebtMenu();
+        showHistory(id)
     }
 }
 
