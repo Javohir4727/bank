@@ -5,7 +5,7 @@ var inputDebt = document.getElementById("inputDebt");
 var body = document.querySelector("body");
 var users = [
     {
-        name: "Behruz",
+        name: "Rustam",
         phoneNumber: "+998974818006",
         debt: 20000,
         history: [
@@ -55,7 +55,7 @@ function showUsers(arr) {
             <td>${i+1}</td>
             <td>${name}</td>
             <td>${phoneNumber}</td>
-            <td>${debt.toLocaleString("ru")}</td>
+            <td>${debt.toLocaleString("ru")} so'm</td>
             <td>
                 <button onclick="showAddDebtMenu(${i})">+</button>
                 <button onclick="showRemoveDebtMenu(${i})">-</button>
