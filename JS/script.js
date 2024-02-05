@@ -19,10 +19,12 @@ var users = [
 ];
 
 function openAddMenu() {
-    body.classList.toggle("active");
-    closeHistory();
+    document.getElementById("addUserMenu").style.transform = "translateX(0px)";
 }
 
+function closeAddMenu() {
+    document.getElementById("addUserMenu").style.transform = "translateX(300px)";
+}
 
 function check() {
     if (inputName.value.trim() != "" && inputNumber.value.trim() != "" && inputDebt.value.trim() != "") {
@@ -37,8 +39,14 @@ function add() {
         name: inputName.value,
         phoneNumber: inputNumber.value,
         debt: +inputDebt.value,
-        history: [],
-    })
+        history: [
+            {
+                title: "Olindi",
+                debt: inputDebt.value,
+                time: new Date().toLocaleString('ru')
+            }
+        ],
+    });
     inputName.value = "";
     inputNumber.value = "";
     inputDebt.value = "";
@@ -52,10 +60,12 @@ function showUsers(arr) {
         var { name, phoneNumber, debt } = element;
         res.innerHTML += `
         <tr>
-            <td>${i+1}</td>
+            <td>${i + 1}</td>
             <td>${name}</td>
             <td>${phoneNumber}</td>
             <td>${debt.toLocaleString("ru")} so'm</td>
+
+            <td>${debt.toLocaleString("ru")} So'm</td>
             <td>
                 <button onclick="showAddDebtMenu(${i})">+</button>
                 <button onclick="showRemoveDebtMenu(${i})">-</button>
@@ -93,12 +103,27 @@ function addDebt(id) {
             time: new Date().toLocaleString('ru')
         })
         showUsers(users);
+
+        closeAddDebtMenu()
+
         closeAddDebtMenu();
         showHistory(id)
+
     }
     showRemoveDebtMenu
 }
 
+
+function showAddDebtMenu(id) {
+    document.getElementById("showAddDebtMenu").style.transform = "translateY(0px)";
+    document.getElementById("showAddDebtMenu").innerHTML = `
+        <p>Olinayotgan so'mmani kiriting</p>
+        <input type="number" id="addDebt">
+        <button onclick="addDebt(${id})">Ok</button>
+        <button onclick="closeAddDebtMenu()">Back</button>
+    `;
+    closeRemoveDebtMenu()
+=======
 function showRemoveDebtMenu(id) {
     document.getElementById("showRemoveDebtMenu").style.display = "block";
     document.getElementById("showRemoveDebtMenu").innerHTML =`
@@ -108,10 +133,11 @@ function showRemoveDebtMenu(id) {
         <button onclick="closeRemoveDebtMenu()">Back</button>
     `
     closeAddDebtMenu(id)
+
 }
 
-function closeRemoveDebtMenu() {
-    document.getElementById("showRemoveDebtMenu").style.display = "none";
+function closeAddDebtMenu() {
+    document.getElementById("showAddDebtMenu").style.transform = "translateY(-400px)";
 }
 
 function removeDebt(id) {
@@ -130,12 +156,26 @@ function removeDebt(id) {
     }
 }
 
+function showRemoveDebtMenu(id) {
+    document.getElementById("showRemoveDebtMenu").style.transform = "translateY(0px)";
+    document.getElementById("showRemoveDebtMenu").innerHTML = `
+        <p>To'langan so'mmani kiriting</p>
+        <input type="number" id="removeDebt">
+        <button onclick="removeDebt(${id})">Ok</button>
+        <button onclick="closeRemoveDebtMenu()">Back</button>
+    `
+    closeAddDebtMenu()
+}
+
+function closeRemoveDebtMenu() {
+    document.getElementById("showRemoveDebtMenu").style.transform = "translateY(-400px)";
+}
+
 function showHistory(id) {
-    openAddMenu()
-    document.getElementById("history").style.display = "block";
+    document.getElementById("history").style.transform = "translateX(0px)";
     document.getElementById("showHistory").innerHTML = ""
     users[id].history.forEach(element => {
-        var {title,debt,time} = element
+        var { title, debt, time } = element
         document.getElementById("showHistory").innerHTML += `
         <ul>
             <li>${title}</li>
@@ -148,5 +188,5 @@ function showHistory(id) {
 }
 
 function closeHistory() {
-    document.getElementById("history").style.display = "none";
+    document.getElementById("history").style.transform = "translateX(300px)";
 }
