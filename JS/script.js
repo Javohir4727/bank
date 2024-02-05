@@ -75,6 +75,21 @@ function showUsers(arr) {
 }
 showUsers(users)
 
+function showAddDebtMenu(id) {
+    document.getElementById("showAddDebtMenu").style.display = "block";
+    document.getElementById("showAddDebtMenu").innerHTML = `
+        <p>Olinayotgan so'mmani kiriting</p>
+        <input type="number" id="addDebt">
+        <button onclick="addDebt(${id})">Ok</button>
+        <button onclick="closeAddDebtMenu()">Back</button>
+    `;
+    closeRemoveDebtMenu(id)
+}
+
+function closeAddDebtMenu() {
+    document.getElementById("showAddDebtMenu").style.display = "none";
+}
+
 function addDebt(id) {
     var inputAddDebt = document.getElementById("addDebt");
     if (inputAddDebt.value.trim() != "") {
@@ -86,9 +101,16 @@ function addDebt(id) {
             time: new Date().toLocaleString('ru')
         })
         showUsers(users);
+
         closeAddDebtMenu()
+
+        closeAddDebtMenu();
+        showHistory(id)
+
     }
+    showRemoveDebtMenu
 }
+
 
 function showAddDebtMenu(id) {
     document.getElementById("showAddDebtMenu").style.transform = "translateY(0px)";
@@ -99,6 +121,17 @@ function showAddDebtMenu(id) {
         <button onclick="closeAddDebtMenu()">Back</button>
     `;
     closeRemoveDebtMenu()
+=======
+function showRemoveDebtMenu(id) {
+    document.getElementById("showRemoveDebtMenu").style.display = "block";
+    document.getElementById("showRemoveDebtMenu").innerHTML =`
+        <p>To'langan so'mmani kiriting</p>
+        <input type="number" id="removeDebt">
+        <button onclick="removeDebt(${id})">Ok</button>
+        <button onclick="closeRemoveDebtMenu()">Back</button>
+    `
+    closeAddDebtMenu(id)
+
 }
 
 function closeAddDebtMenu() {
@@ -117,6 +150,7 @@ function removeDebt(id) {
         })
         showUsers(users);
         closeRemoveDebtMenu();
+        showHistory(id)
     }
 }
 
