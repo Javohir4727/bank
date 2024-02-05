@@ -5,9 +5,12 @@
     text-decoration: none;
     list-style: none;
     font-family: sans-serif;
-}
-
-header {
+  }
+  body {
+    transition: 200ms;
+  }
+  
+  header {
     width: 100%;
     height: 60px;
     line-height: 60px;
@@ -15,52 +18,56 @@ header {
     justify-content: space-between;
     background: whitesmoke;
     padding: 0 15px;
-}
-
-header h2 {
+  }
+  
+  header h2 {
     font-size: 30px;
-}
-
-header #navbar a {
+  }
+  
+  header #navbar a {
     color: black;
     font-size: 16px;
     margin-left: 10px;
-}
-
-#addUserMenu {
+  }
+  
+  #addUserMenu {
     width: 300px;
-    height: 90vh;
+    height: 100vh;
     padding: 40px 0 20px 0;
     background: gray;
-
-    position: absolute;
-    top: -90vh;
+    transition: 0.5s;
+    position: fixed;
+    top: 60px;
     right: 0;
-    display: none;
-}
-
-#addUserMenu .content {
+    transform: translateX(300px);
+  }
+  
+  .active #addUserMenu {
+    transform: translateX(0px);
+  }
+  
+  #addUserMenu .content {
     width: 200px;
     margin-bottom: 60px;
     position: relative;
     left: 20px;
-}
-
-#addUserMenu .content input {
+  }
+  
+  #addUserMenu .content input {
     padding: 4px 35px;
     border: 1px solid black;
     border-radius: 12px;
     font-size: 16px;
     outline: none;
-}
-
-#addUserMenu .content label {
+  }
+  
+  #addUserMenu .content label {
     font-size: 18px;
     position: absolute;
     top: -25px;
-}
-
-#addUserMenu button {
+  }
+  
+  #addUserMenu button {
     padding: 6px 50px;
     font-size: 16px;
     border: 1px solid black;
@@ -68,120 +75,121 @@ header #navbar a {
     background: white;
     cursor: pointer;
     margin-left: 10px;
-}
-
-/* table */
-
-table,
-td,
-th,
-tr {
+  }
+  
+  /* table */
+  
+  table,
+  td,
+  th,
+  tr {
     border: 1px solid black;
     padding: 8px;
     border-collapse: collapse;
-}
-
-table {
+  }
+  
+  table {
     text-align: center;
     margin: 100px auto 0 auto;
     text-transform: capitalize;
-}
-
-table button {
+  }
+  
+  table button {
     padding: 0 10px;
     font-size: 16px;
     background: white;
     border: 1px solid black;
-}
-
-table .bx {
+  }
+  
+  table .bx {
     font-size: 25px;
-}
-
-/* history */
-
-#history {
+  }
+  
+  /* history */
+  
+  #history {
     width: 300px;
-    height: 90vh;
+    height: 100vh;
     padding: 20px;
-
+    transition: 0.5s;
+  
     background: gray;
-    position: absolute;
+    position: fixed;
     top: 60px;
     right: 0;
-    display: none;
-}
-
-#history ul {
+    transform: translateX(300px);
+  }
+  
+  #history ul {
     display: flex;
     justify-content: space-between;
     margin: 10px 0;
-}
-
-#history button {
+  }
+  
+  #history button {
     padding: 4px 35px;
     margin-top: 20px;
-}
-
-    /* add Debt menu */
-
-#showAddDebtMenu {
+  }
+  
+  /* add Debt menu */
+  
+  #showAddDebtMenu {
     width: min-content;
     height: max-content;
     padding: 20px;
     background: gray;
     text-align: center;
     border-radius: 8px;
-
+    transition: 0.5s;
+  
     position: fixed;
-    top: 35%;
     left: 40%;
-    display: none;
-}
-
-#showAddDebtMenu p {
+    transform: translateY(-300px);
+  }
+  
+  #showAddDebtMenu p {
     font-size: 16px;
     margin-bottom: 10px;
-}
-
-#showAddDebtMenu input {
+  }
+  
+  #showAddDebtMenu input {
     padding: 4px 35px;
     font-size: 16px;
     border: 1px solid black;
     border-radius: 12px;
     outline: none;
-}
-
-#showAddDebtMenu button {
+  }
+  
+  #showAddDebtMenu button {
     padding: 4px 35px;
     background: white;
     font-size: 16px;
     border: 1px solid black;
     border-radius: 12px;
     margin-top: 10px;
-}
-
-    /* remome debt menu */
-
-#showRemoveDebtMenu {
+  }
+  
+  /* remome debt menu */
+  
+  #showRemoveDebtMenu {
     width: min-content;
     height: max-content;
     padding: 20px;
     background: gray;
     text-align: center;
     border-radius: 8px;
-
+    transition: 0.5s;
+  
     position: fixed;
-    top: 35%;
     left: 40%;
-    display: none;
+    transform: translateY(-300px);
   }
-
+  
   #showRemoveDebtMenu p {
     font-size: 16px;
     margin-bottom: 10px;
   }
-
+  
   #showRemoveDebtMenu input {
     padding: 4px 35px;
     font-size: 16px;
@@ -189,7 +197,7 @@ table .bx {
     border-radius: 12px;
     outline: none;
   }
-
+  
   #showRemoveDebtMenu button {
     padding: 4px 35px;
     background: white;
@@ -198,4 +206,4 @@ table .bx {
     border-radius: 12px;
     margin-top: 10px;
   }
-/*# sourceMappingURL=style.css.map */
+  /*# sourceMappingURL=style.css.map */
